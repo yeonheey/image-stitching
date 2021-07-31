@@ -7,47 +7,64 @@
 
 import UIKit
 import Photos
+import PhotosUI
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, PHPickerViewControllerDelegate {
     
     // MARK: properties
-    lazy var imagePicker: UIImagePickerController = {
-        let picker: UIImagePickerController = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        return picker
-    } ()
+    @IBOutlet weak var convertButton: UIButton!
+    @IBOutlet weak var imagePickerButton: UIButton!
+    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
     
-    @IBOutlet weak var imageView: UIImageView!
+    
+    private var imageSet: [UIImage] = [UIImage]()
     
     // MARK: - Actions
     @IBAction func touchUpPhotoPickerButton(_ sender: UIButton) {
-        self.present(self.imagePicker, animated: true)
-    }
-    
-    @IBAction func touchUpConvertButton(_ sender: UIButton) {
-        if let image = imageView.image {
-            let edgeImage = OpenCVWrapper.detectEdge(image)
-            
-            self.imageView.image = edgeImage
-        }
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 2
+        configuration.filter = .images
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        self.present(picker, animated: true)
     }
     
     // MARK: - Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.dismiss(animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let originalImage: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.imageView.image = originalImage
-        }
         
-        self.dismiss(animated: true)
+        convertButton.layer.cornerRadius = 5
+        imagePickerButton.layer.cornerRadius = 5
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        
+        if results.count > 1 {
+            imageSet.removeAll()
+            
+            for result in results {
+                if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                    result.itemProvider.loadObject(ofClass: UIImage.self) { imageObject, error in
+                        if error == nil {
+                            if let image = imageObject as? UIImage {
+                                self.imageSet.append(image)
+                                
+                                DispatchQueue.main.async {
+                                    if results.first == result {
+                                        self.leftImageView.image = image
+                                    } else {
+                                        self.rightImageView.image = image
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-

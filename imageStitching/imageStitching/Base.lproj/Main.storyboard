@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,50 +13,113 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="imageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7S8-vL-Fr7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="537.5"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="163" translatesAutoresizingMaskIntoConstraints="NO" id="NKt-5g-fd9">
-                                <rect key="frame" x="70.5" y="802" width="273" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NKt-5g-fd9">
+                                <rect key="frame" x="20" y="750" width="350" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvc-8E-4JO">
-                                        <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
-                                        <state key="normal" title="Convert"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Convert">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="touchUpConvertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZj-xE-9F7"/>
+                                            <segue destination="2mX-ST-Jy1" kind="presentation" id="YJC-1p-wWg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-Bl-H31">
-                                        <rect key="frame" x="218" y="0.0" width="55" height="30"/>
-                                        <state key="normal" title="가져오기"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-Bl-H31">
+                                        <rect key="frame" x="190" y="0.0" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Choose 2 Images">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="touchUpPhotoPickerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thj-SB-RS5"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3wn-Y6-V1Z">
+                                <rect key="frame" x="20" y="327.33333333333331" width="350" height="252.99999999999994"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-Ye-Gqx">
+                                <rect key="frame" x="20" y="54.000000000000014" width="350" height="253.33333333333337"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7S8-vL-Fr7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Fd-R4-3Yv"/>
+                            <constraint firstItem="3wn-Y6-V1Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0LO-Js-wVQ"/>
+                            <constraint firstItem="l8A-Ye-Gqx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="1af-QM-A1U"/>
+                            <constraint firstItem="NKt-5g-fd9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9Rd-eH-CoI"/>
+                            <constraint firstItem="3wn-Y6-V1Z" firstAttribute="top" secondItem="l8A-Ye-Gqx" secondAttribute="bottom" constant="20" id="EWL-bs-zwv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NKt-5g-fd9" secondAttribute="bottom" constant="30" id="Khz-q0-Xzz"/>
-                            <constraint firstItem="7S8-vL-Fr7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ls1-8V-9pK"/>
+                            <constraint firstItem="l8A-Ye-Gqx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="LGk-kv-hjX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NKt-5g-fd9" secondAttribute="trailing" constant="20" id="QIJ-r5-cfQ"/>
                             <constraint firstItem="NKt-5g-fd9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WrG-Oi-Dwo"/>
-                            <constraint firstItem="7S8-vL-Fr7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="vb2-Z2-mOJ"/>
-                            <constraint firstItem="7S8-vL-Fr7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zrS-ka-XrQ"/>
+                            <constraint firstItem="l8A-Ye-Gqx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="fww-q8-Ge9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3wn-Y6-V1Z" secondAttribute="trailing" constant="20" id="iu9-p8-E17"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l8A-Ye-Gqx" secondAttribute="trailing" constant="20" id="sG3-S5-pC9"/>
+                            <constraint firstItem="3wn-Y6-V1Z" firstAttribute="height" secondItem="l8A-Ye-Gqx" secondAttribute="height" id="t1M-hh-ExE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="7S8-vL-Fr7" id="X7g-yW-SAO"/>
+                        <outlet property="convertButton" destination="Nvc-8E-4JO" id="fNd-ig-2bU"/>
+                        <outlet property="imagePickerButton" destination="CSX-Bl-H31" id="iPx-kA-D7D"/>
+                        <outlet property="leftImageView" destination="l8A-Ye-Gqx" id="YpV-k7-OAz"/>
+                        <outlet property="rightImageView" destination="3wn-Y6-V1Z" id="EbR-Cl-uJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-50.769230769230766" y="115.87677725118483"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="kgx-L4-L5p">
+            <objects>
+                <viewController id="2mX-ST-Jy1" customClass="ResultViewController" customModule="imageStitching" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VL8-OR-xFR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AiG-3H-bf4">
+                                <rect key="frame" x="0.0" y="158" width="390" height="316"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-Hz-XED">
+                                <rect key="frame" x="30" y="656" width="330" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UEU-py-cgz"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5a1-Rw-vaT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AiG-3H-bf4" firstAttribute="centerX" secondItem="VL8-OR-xFR" secondAttribute="centerX" id="4vA-W7-Lec"/>
+                            <constraint firstItem="AiG-3H-bf4" firstAttribute="leading" secondItem="5a1-Rw-vaT" secondAttribute="leading" id="DMG-Ax-jHO"/>
+                            <constraint firstItem="ZRR-Hz-XED" firstAttribute="leading" secondItem="5a1-Rw-vaT" secondAttribute="leading" constant="30" id="SL0-So-xtG"/>
+                            <constraint firstItem="AiG-3H-bf4" firstAttribute="height" secondItem="VL8-OR-xFR" secondAttribute="height" multiplier="0.4" id="Vce-24-F9Y"/>
+                            <constraint firstItem="5a1-Rw-vaT" firstAttribute="bottom" secondItem="ZRR-Hz-XED" secondAttribute="bottom" constant="50" id="bz1-bC-C5A"/>
+                            <constraint firstAttribute="trailing" secondItem="AiG-3H-bf4" secondAttribute="trailing" id="c8A-9J-NZZ"/>
+                            <constraint firstItem="AiG-3H-bf4" firstAttribute="centerY" secondItem="VL8-OR-xFR" secondAttribute="centerY" multiplier="0.8" id="fOL-UG-UqY"/>
+                            <constraint firstItem="5a1-Rw-vaT" firstAttribute="trailing" secondItem="ZRR-Hz-XED" secondAttribute="trailing" constant="30" id="sUr-qL-BIX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="okButton" destination="ZRR-Hz-XED" id="qVA-Qj-ZzN"/>
+                        <outlet property="resultImageView" destination="AiG-3H-bf4" id="yMS-kl-T4E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnZ-BE-KJE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718.84057971014499" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>

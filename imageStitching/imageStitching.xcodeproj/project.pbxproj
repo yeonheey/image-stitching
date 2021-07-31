@@ -15,6 +15,7 @@
 		9F8A8A5826B3FDAA003AE06D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A8A5626B3FDAA003AE06D /* LaunchScreen.storyboard */; };
 		9F8A8A6926B3FFB7003AE06D /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A6826B3FFB7003AE06D /* OpenCVWrapper.mm */; };
 		9F8A8A6F26B45CA4003AE06D /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A8A6E26B45CA4003AE06D /* opencv2.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		9F9D990B26B4674E00005734 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D990A26B4674E00005734 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,11 +67,12 @@
 		9F8A8A4A26B3FDA9003AE06D /* imageStitching */ = {
 			isa = PBXGroup;
 			children = (
-				9F8A8A5926B3FDAA003AE06D /* Info.plist */,
+				9F9D990926B4671700005734 /* PropertyList */,
 				9F8A8A6226B3FE29003AE06D /* Application */,
 				9F8A8A5426B3FDAA003AE06D /* Assets.xcassets */,
-				9F8A8A4F26B3FDA9003AE06D /* ViewController.swift */,
 				9F8A8A5126B3FDA9003AE06D /* Main.storyboard */,
+				9F9D990A26B4674E00005734 /* ResultViewController.swift */,
+				9F8A8A4F26B3FDA9003AE06D /* ViewController.swift */,
 				9F8A8A5626B3FDAA003AE06D /* LaunchScreen.storyboard */,
 				9F89A54726B45F1A003D278D /* PrefixHeader.pch */,
 			);
@@ -102,6 +104,14 @@
 				9F8A8A6E26B45CA4003AE06D /* opencv2.framework */,
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		9F9D990926B4671700005734 /* PropertyList */ = {
+			isa = PBXGroup;
+			children = (
+				9F8A8A5926B3FDAA003AE06D /* Info.plist */,
+			);
+			name = PropertyList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9D990B26B4674E00005734 /* ResultViewController.swift in Sources */,
 				9F8A8A5026B3FDA9003AE06D /* ViewController.swift in Sources */,
 				9F8A8A4C26B3FDA9003AE06D /* AppDelegate.swift in Sources */,
 				9F8A8A6926B3FFB7003AE06D /* OpenCVWrapper.mm in Sources */,
