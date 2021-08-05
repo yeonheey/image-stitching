@@ -26,7 +26,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="2mX-ST-Jy1" kind="presentation" id="YJC-1p-wWg"/>
+                                            <action selector="touchUpConvertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOc-9o-Nf7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-Bl-H31">
@@ -82,14 +82,14 @@
             <objects>
                 <viewController id="2mX-ST-Jy1" customClass="ResultViewController" customModule="imageStitching" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VL8-OR-xFR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AiG-3H-bf4">
-                                <rect key="frame" x="0.0" y="158" width="390" height="316"/>
+                                <rect key="frame" x="0.0" y="168.66666666666666" width="390" height="337.66666666666674"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRR-Hz-XED">
-                                <rect key="frame" x="30" y="656" width="330" height="50"/>
+                                <rect key="frame" x="30" y="710" width="330" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UEU-py-cgz"/>

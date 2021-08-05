@@ -6,25 +6,35 @@
 //
 
 #import "OpenCVWrapper.h"
-#include <opencv2/opencv2.h>
-#include <opencv2/imgcodecs/ios.h>
+#import <opencv2/opencv.hpp>
+#import <opencv2/imgcodecs/ios.h>
 
 @implementation OpenCVWrapper
-+(UIImage *) detectEdge:(UIImage *)image {
-    cv::Mat imageMat;
+
+using namespace std;
+using namespace cv;
+
++(UIImage *) makeGrayFromImage:(UIImage *)image {
+    Mat imageMat;
     UIImageToMat(image, imageMat);
     
     if (imageMat.channels() == 1) {
         return image;
     }
+
+    Mat grayMat;
+    cvtColor(imageMat, grayMat, COLOR_BGR2GRAY);
     
-    cv::Mat grayMat;
-    cv::cvtColor(imageMat, grayMat, cv::COLOR_BGR2GRAY);
+    return MatToUIImage(grayMat);
+}
+
++(UIImage *) stitchTwoImages: (NSMutableArray *) images {
+    if (images.count < 2) {
+        NSLog(@"imageArray is empty");
+    }
     
-    cv::Mat cannyMat;
-    cv::Canny(grayMat, cannyMat, 50, 150, 3);
+    vector<Mat> matArray;
     
-    return MatToUIImage(cannyMat);
 }
 
 @end
