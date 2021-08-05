@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2E43D226B660E6009A9EDE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2E43D126B660E6009A9EDE /* opencv2.framework */; };
 		9F8A8A4C26B3FDA9003AE06D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4B26B3FDA9003AE06D /* AppDelegate.swift */; };
 		9F8A8A4E26B3FDA9003AE06D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4D26B3FDA9003AE06D /* SceneDelegate.swift */; };
 		9F8A8A5026B3FDA9003AE06D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4F26B3FDA9003AE06D /* ViewController.swift */; };
@@ -14,11 +15,11 @@
 		9F8A8A5526B3FDAA003AE06D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A8A5426B3FDAA003AE06D /* Assets.xcassets */; };
 		9F8A8A5826B3FDAA003AE06D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A8A5626B3FDAA003AE06D /* LaunchScreen.storyboard */; };
 		9F8A8A6926B3FFB7003AE06D /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A6826B3FFB7003AE06D /* OpenCVWrapper.mm */; };
-		9F8A8A6F26B45CA4003AE06D /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8A8A6E26B45CA4003AE06D /* opencv2.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9F9D990B26B4674E00005734 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D990A26B4674E00005734 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2E43D126B660E6009A9EDE /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		9F89A54726B45F1A003D278D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F8A8A4826B3FDA9003AE06D /* imageStitching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageStitching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A8A4B26B3FDA9003AE06D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +32,7 @@
 		9F8A8A6626B3FFB7003AE06D /* imageStitching-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageStitching-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F8A8A6726B3FFB7003AE06D /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9F8A8A6826B3FFB7003AE06D /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		9F8A8A6E26B45CA4003AE06D /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		9F9D990A26B4674E00005734 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8A8A6F26B45CA4003AE06D /* opencv2.framework in Frameworks */,
+				9F2E43D226B660E6009A9EDE /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +102,7 @@
 		9F8A8A6D26B45C78003AE06D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				9F8A8A6E26B45CA4003AE06D /* opencv2.framework */,
+				9F2E43D126B660E6009A9EDE /* opencv2.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";

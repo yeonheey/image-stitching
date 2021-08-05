@@ -17,8 +17,8 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     
-    
     private var imageSet: [UIImage] = [UIImage]()
+    private let resultViewController = ResultViewController()
     
     // MARK: - Actions
     @IBAction func touchUpPhotoPickerButton(_ sender: UIButton) {
@@ -31,6 +31,18 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
         
         self.present(picker, animated: true)
     }
+    
+    @IBAction func touchUpConvertButton(_ sender: UIButton) {
+        if imageSet.count == 2 {
+            resultViewController.imageSet = self.imageSet
+            present(resultViewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "", message: "2 개의 이미지를 선택해주세요.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            present(alert, animated: true)
+        }
+    }
+    
     
     // MARK: - Override Method
     override func viewDidLoad() {

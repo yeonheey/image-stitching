@@ -13,6 +13,13 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var okButton: UIButton!
     
+    var imageSet: [UIImage] = [UIImage]()
+
+    // MARK: Actions
+    @objc func okButtonTouchUp() {
+        self.dismiss(animated: true)
+    }
+    
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +28,7 @@ class ResultViewController: UIViewController {
         okButton.addTarget(self, action: #selector(okButtonTouchUp), for: .touchUpInside)
     }
     
-    // MARK: Actions
-    @objc func okButtonTouchUp() {
-        self.dismiss(animated: true)
+    override func viewWillLayoutSubviews() {
+        
     }
 }
