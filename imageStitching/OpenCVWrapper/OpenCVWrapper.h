@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface OpenCVWrapper : NSObject
 
 +(UIImage *) makeGrayFromImage:(UIImage *)image;
-+(UIImage *) stitchTwoImages: (NSMutableArray *) images;
++(UIImage *) stitchTwoImages: (UIImage *) leftImage rightImage:(UIImage *) rightImage;
 
 @end
 

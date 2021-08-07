@@ -12,8 +12,6 @@ class ResultViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var resultImageView: UIImageView!
     @IBOutlet weak var okButton: UIButton!
-    
-    var imageSet: [UIImage] = [UIImage]()
 
     // MARK: Actions
     @objc func okButtonTouchUp() {
@@ -26,9 +24,8 @@ class ResultViewController: UIViewController {
 
         okButton.layer.cornerRadius = 5
         okButton.addTarget(self, action: #selector(okButtonTouchUp), for: .touchUpInside)
-    }
-    
-    override func viewWillLayoutSubviews() {
         
+        resultImageView.image = UIImage()
     }
+
 }

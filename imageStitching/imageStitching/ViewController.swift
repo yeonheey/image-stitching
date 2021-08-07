@@ -17,8 +17,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     
-    private var imageSet: [UIImage] = [UIImage]()
-    private let resultViewController = ResultViewController()
+    var resultViewController = ResultViewController()
     
     // MARK: - Actions
     @IBAction func touchUpPhotoPickerButton(_ sender: UIButton) {
@@ -33,37 +32,58 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     }
     
     @IBAction func touchUpConvertButton(_ sender: UIButton) {
-        if imageSet.count == 2 {
-            resultViewController.imageSet = self.imageSet
-            present(resultViewController, animated: true)
-        } else {
-            let alert = UIAlertController(title: "", message: "2 개의 이미지를 선택해주세요.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .default))
+        if leftImageView.image == nil || rightImageView.image == nil {
+            let alert = UIAlertController(title: "",
+                                          message: "2 개의 이미지를 선택해주세요.",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인",
+                                          style: .default))
             present(alert, animated: true)
+        } else {
+            DispatchQueue.main.async {
+                guard let leftImage = self.leftImageView.image else {
+                    return
+                }
+                guard let rightImage = self.rightImageView.image else {
+                    return
+                }
+                
+                let resultImage = OpenCVWrapper.stitchTwoImages(
+                    leftImage,
+                    rightImage: rightImage)
+                
+                
+                
+                // self.resultViewController.resultImageView.image = resultImage
+            }
         }
     }
-    
     
     // MARK: - Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
         
         convertButton.layer.cornerRadius = 5
+        convertButton.isEnabled = false
+        convertButton.backgroundColor = .gray
+        
         imagePickerButton.layer.cornerRadius = 5
     }
     
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+    func picker(_ picker: PHPickerViewController,
+                didFinishPicking results: [PHPickerResult]) {
+        
         picker.dismiss(animated: true)
         
         if results.count > 1 {
-            imageSet.removeAll()
+            convertButton.isEnabled = true
+            convertButton.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
             
             for result in results {
                 if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
                     result.itemProvider.loadObject(ofClass: UIImage.self) { imageObject, error in
                         if error == nil {
                             if let image = imageObject as? UIImage {
-                                self.imageSet.append(image)
                                 
                                 DispatchQueue.main.async {
                                     if results.first == result {
