@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F2E43D226B660E6009A9EDE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2E43D126B660E6009A9EDE /* opencv2.framework */; };
+		509651B3F5E05D635A859BB1 /* Pods_imageStitching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFD0BA030F9EEF4DC642F2C /* Pods_imageStitching.framework */; };
 		9F8A8A4C26B3FDA9003AE06D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4B26B3FDA9003AE06D /* AppDelegate.swift */; };
 		9F8A8A4E26B3FDA9003AE06D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4D26B3FDA9003AE06D /* SceneDelegate.swift */; };
 		9F8A8A5026B3FDA9003AE06D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A4F26B3FDA9003AE06D /* ViewController.swift */; };
@@ -15,11 +15,14 @@
 		9F8A8A5526B3FDAA003AE06D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A8A5426B3FDAA003AE06D /* Assets.xcassets */; };
 		9F8A8A5826B3FDAA003AE06D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8A8A5626B3FDAA003AE06D /* LaunchScreen.storyboard */; };
 		9F8A8A6926B3FFB7003AE06D /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F8A8A6826B3FFB7003AE06D /* OpenCVWrapper.mm */; };
-		9F9D990B26B4674E00005734 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D990A26B4674E00005734 /* ResultViewController.swift */; };
+		9FF496AF26C04ABD004CE817 /* StitchedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF496AD26C04ABD004CE817 /* StitchedImageViewController.swift */; };
+		9FF496B026C04ABD004CE817 /* StitchedImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF496AE26C04ABD004CE817 /* StitchedImageViewController.xib */; };
+		9FF7293526BEEBC4002CFFC8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF7293426BEEBC4002CFFC8 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F2E43D126B660E6009A9EDE /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		4A5CB06CEA934C42945CA9C6 /* Pods-imageStitching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageStitching.debug.xcconfig"; path = "Target Support Files/Pods-imageStitching/Pods-imageStitching.debug.xcconfig"; sourceTree = "<group>"; };
+		8FFD0BA030F9EEF4DC642F2C /* Pods_imageStitching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imageStitching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F89A54726B45F1A003D278D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F8A8A4826B3FDA9003AE06D /* imageStitching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageStitching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8A8A4B26B3FDA9003AE06D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +35,10 @@
 		9F8A8A6626B3FFB7003AE06D /* imageStitching-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imageStitching-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F8A8A6726B3FFB7003AE06D /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		9F8A8A6826B3FFB7003AE06D /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		9F9D990A26B4674E00005734 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		9FF496AD26C04ABD004CE817 /* StitchedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchedImageViewController.swift; sourceTree = "<group>"; };
+		9FF496AE26C04ABD004CE817 /* StitchedImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StitchedImageViewController.xib; sourceTree = "<group>"; };
+		9FF7293426BEEBC4002CFFC8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		F42006381A897030E25384FF /* Pods-imageStitching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageStitching.release.xcconfig"; path = "Target Support Files/Pods-imageStitching/Pods-imageStitching.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2E43D226B660E6009A9EDE /* opencv2.framework in Frameworks */,
+				9FF7293526BEEBC4002CFFC8 /* opencv2.framework in Frameworks */,
+				509651B3F5E05D635A859BB1 /* Pods_imageStitching.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,8 @@
 				9F8A8A6526B3FF3D003AE06D /* OpenCVWrapper */,
 				9F8A8A4A26B3FDA9003AE06D /* imageStitching */,
 				9F8A8A4926B3FDA9003AE06D /* Products */,
+				E9B4FEFD6889433141455169 /* Pods */,
+				CEC6E0909AA52E4DAA985382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,10 +81,11 @@
 				9F8A8A6226B3FE29003AE06D /* Application */,
 				9F8A8A5426B3FDAA003AE06D /* Assets.xcassets */,
 				9F8A8A5126B3FDA9003AE06D /* Main.storyboard */,
-				9F9D990A26B4674E00005734 /* ResultViewController.swift */,
 				9F8A8A4F26B3FDA9003AE06D /* ViewController.swift */,
 				9F8A8A5626B3FDAA003AE06D /* LaunchScreen.storyboard */,
 				9F89A54726B45F1A003D278D /* PrefixHeader.pch */,
+				9FF496AD26C04ABD004CE817 /* StitchedImageViewController.swift */,
+				9FF496AE26C04ABD004CE817 /* StitchedImageViewController.xib */,
 			);
 			path = imageStitching;
 			sourceTree = "<group>";
@@ -102,7 +112,7 @@
 		9F8A8A6D26B45C78003AE06D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				9F2E43D126B660E6009A9EDE /* opencv2.framework */,
+				9FF7293426BEEBC4002CFFC8 /* opencv2.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -115,6 +125,24 @@
 			name = PropertyList;
 			sourceTree = "<group>";
 		};
+		CEC6E0909AA52E4DAA985382 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FFD0BA030F9EEF4DC642F2C /* Pods_imageStitching.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9B4FEFD6889433141455169 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A5CB06CEA934C42945CA9C6 /* Pods-imageStitching.debug.xcconfig */,
+				F42006381A897030E25384FF /* Pods-imageStitching.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F8A8A5C26B3FDAA003AE06D /* Build configuration list for PBXNativeTarget "imageStitching" */;
 			buildPhases = (
+				ACD6CAE65862312E5D2FE81F /* [CP] Check Pods Manifest.lock */,
 				9F8A8A4426B3FDA9003AE06D /* Sources */,
 				9F8A8A4526B3FDA9003AE06D /* Frameworks */,
 				9F8A8A4626B3FDA9003AE06D /* Resources */,
+				EEC40E7468E24063EBFBA21D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,18 +205,61 @@
 			files = (
 				9F8A8A5826B3FDAA003AE06D /* LaunchScreen.storyboard in Resources */,
 				9F8A8A5526B3FDAA003AE06D /* Assets.xcassets in Resources */,
+				9FF496B026C04ABD004CE817 /* StitchedImageViewController.xib in Resources */,
 				9F8A8A5326B3FDA9003AE06D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ACD6CAE65862312E5D2FE81F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-imageStitching-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEC40E7468E24063EBFBA21D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imageStitching/Pods-imageStitching-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-imageStitching/Pods-imageStitching-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imageStitching/Pods-imageStitching-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F8A8A4426B3FDA9003AE06D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9D990B26B4674E00005734 /* ResultViewController.swift in Sources */,
+				9FF496AF26C04ABD004CE817 /* StitchedImageViewController.swift in Sources */,
 				9F8A8A5026B3FDA9003AE06D /* ViewController.swift in Sources */,
 				9F8A8A4C26B3FDA9003AE06D /* AppDelegate.swift in Sources */,
 				9F8A8A6926B3FFB7003AE06D /* OpenCVWrapper.mm in Sources */,
@@ -334,6 +407,7 @@
 		};
 		9F8A8A5D26B3FDAA003AE06D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A5CB06CEA934C42945CA9C6 /* Pods-imageStitching.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -362,6 +436,7 @@
 		};
 		9F8A8A5E26B3FDAA003AE06D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F42006381A897030E25384FF /* Pods-imageStitching.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

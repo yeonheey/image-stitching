@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 import Photos
 import PhotosUI
 
-class ViewController: UIViewController, PHPickerViewControllerDelegate {
+class ViewController: UIViewController, PHPickerViewControllerDelegate, UIAdaptivePresentationControllerDelegate {
     
     // MARK: properties
     @IBOutlet weak var convertButton: UIButton!
@@ -17,7 +18,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     
-    var resultViewController = ResultViewController()
+    let stitchedResultViewController = StitchedImageViewController()
     
     // MARK: - Actions
     @IBAction func touchUpPhotoPickerButton(_ sender: UIButton) {
@@ -52,9 +53,15 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
                     leftImage,
                     rightImage: rightImage)
                 
+                var resultImageView = UIImageView(image: resultImage)
+                self.view.addSubview(resultImageView)
                 
-                
-                // self.resultViewController.resultImageView.image = resultImage
+                resultImageView.contentMode = .scaleAspectFit
+                resultImageView.snp.makeConstraints { make in
+                    make.left.right.equalToSuperview()
+                    make.top.equalToSuperview().offset(30)
+                    make.height.equalToSuperview().offset(-100)
+                }
             }
         }
     }

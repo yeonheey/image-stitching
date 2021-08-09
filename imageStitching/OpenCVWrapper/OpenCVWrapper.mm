@@ -6,8 +6,8 @@
 //
 
 #import "OpenCVWrapper.h"
-#import <opencv2/opencv2.h>
 #import <opencv2/imgcodecs/ios.h>
+#import <opencv2/opencv2.h>
 #import <opencv2/Imgproc.h>
 #import <opencv2/Core.h>
 #import <opencv2/Features2d.h>
@@ -50,18 +50,14 @@
     }
     
     // 2. Detect the keypoints
-    std::vector<cv::KeyPoint> leftKeyPoints, rightKeyPoints;
-    cv::FeatureDetector Detector;
-    
-    Detector.detect(leftGrayImageMat, leftKeyPoints);
-    Detector.detect(rightGrayImageMat, rightKeyPoints);
-    
     // 3. calculate Descriptors
-    cv::DescriptorExtractor Extractor;
+    std::vector<cv::KeyPoint> leftKeyPoints, rightKeyPoints;
     cv::Mat leftDescriptorsMat, rightDescriptorsMat;
     
-    Extractor.compute(leftGrayImageMat, leftKeyPoints, leftDescriptorsMat);
-    Extractor.compute(rightGrayImageMat, rightKeyPoints, rightDescriptorsMat);
+    cv::Ptr<cv::SIFT> Detector = cv::SIFT::create();
+    
+    Detector->detectAndCompute(leftGrayImageMat, cv::noArray(), leftKeyPoints, leftDescriptorsMat);
+    Detector->detectAndCompute(rightGrayImageMat, cv::noArray(), rightKeyPoints, rightDescriptorsMat);
     
     // 4. matching descriptor vectors using FLANN matcher
     // left image에서 키포인트들 중에서 right image에서 나타나는 키포인트 들중 가까운 것들을 찾는다
@@ -71,39 +67,16 @@
     
     Matcher.match(leftDescriptorsMat, rightDescriptorsMat, matches);
     
-    // 두 매치 포인트에서 min max를 계산해서 가까운 자리에 있는 애들끼리 사용
-    double minDist = 0, maxDist = 100;
-    for (int i = 0; i < leftDescriptorsMat.rows; i++) {
-        double dist = matches[i].distance;
-        
-        if (dist < minDist) {
-            minDist = dist;
-        }
-        if (dist > maxDist) {
-            maxDist = dist;
-        }
-    }
-    
-    NSLog(@"%f", minDist);
-    NSLog(@"%f", maxDist);
-    
-    std::vector<cv::DMatch> goodMatches;
-    for (int i = 0; i < leftDescriptorsMat.rows; i++) {
-        if (matches[i].distance < 3 * minDist) {
-            goodMatches.push_back(matches[i]);
-        }
-    }
-    
     // 5. calculate homography
     std::vector<cv::Point2f> leftPoints, rightPoints;
     
-    for (int i = 0; i < goodMatches.size(); i++) {
-        leftPoints.push_back(leftKeyPoints[goodMatches[i].queryIdx].pt);
-        rightPoints.push_back(rightKeyPoints[goodMatches[i].trainIdx].pt);
+    for (int i = 0; i < matches.size(); i++) {
+        leftPoints.push_back(leftKeyPoints[matches[i].queryIdx].pt);
+        rightPoints.push_back(rightKeyPoints[matches[i].trainIdx].pt);
     }
     
     // Homography matrix
-    cv::Mat homoMatrix = findHomography(leftPoints, rightPoints, cv::RANSAC);
+    cv::Mat homoMatrix = cv::findHomography(leftPoints, rightPoints, cv::RANSAC);
     
     // 6. warp the images using homography
     cv::Mat resultMat;
