@@ -32,7 +32,7 @@
                         <action selector="okEvent:" destination="-1" eventType="touchUpInside" id="Z77-Qp-zW6"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b93-l0-FZd">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b93-l0-FZd">
                     <rect key="frame" x="20.5" y="253" width="373" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="18E-ZE-vWg"/>

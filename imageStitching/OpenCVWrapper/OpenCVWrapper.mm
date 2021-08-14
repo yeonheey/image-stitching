@@ -68,20 +68,21 @@
     Matcher.match(leftDescriptorsMat, rightDescriptorsMat, matches);
     
     // 5. calculate homography
-    std::vector<cv::Point2f> leftPoints, rightPoints;
+    std::vector<cv::Point2f> obj, scence;
     
     for (int i = 0; i < matches.size(); i++) {
-        leftPoints.push_back(leftKeyPoints[matches[i].queryIdx].pt);
-        rightPoints.push_back(rightKeyPoints[matches[i].trainIdx].pt);
+        obj.push_back(leftKeyPoints[matches[i].queryIdx].pt);
+        scence.push_back(rightKeyPoints[matches[i].trainIdx].pt);
     }
     
     // Homography matrix
-    cv::Mat homoMatrix = cv::findHomography(leftPoints, rightPoints, cv::RANSAC);
+    cv::Mat homoMatrix = cv::findHomography(scence, obj, cv::RANSAC);
+    std::cout << homoMatrix << std::endl;
     
     // 6. warp the images using homography
     cv::Mat resultMat;
-    
-    warpPerspective(rightImageMat, resultMat, homoMatrix, cv::Size(rightImageMat.cols * 2, rightImageMat.rows));
+        
+    cv::warpPerspective(rightImageMat, resultMat, homoMatrix, cv::Size(rightImageMat.cols * 2, rightImageMat.rows * 1.2), cv::INTER_CUBIC);
     
     cv::Mat panoramaMat;
     panoramaMat = resultMat.clone();
@@ -89,7 +90,6 @@
     cv::Mat tempMat(panoramaMat, cv::Rect(0, 0, leftImageMat.cols, leftImageMat.rows));
     leftImageMat.copyTo(tempMat);
     
-    // cv::Mat panoramaMat;
     return MatToUIImage(panoramaMat);
 }
 

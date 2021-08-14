@@ -41,28 +41,20 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate, UIAdapti
                                           style: .default))
             present(alert, animated: true)
         } else {
-            DispatchQueue.main.async {
-                guard let leftImage = self.leftImageView.image else {
-                    return
-                }
-                guard let rightImage = self.rightImageView.image else {
-                    return
-                }
-                
-                let resultImage = OpenCVWrapper.stitchTwoImages(
-                    leftImage,
-                    rightImage: rightImage)
-                
-                var resultImageView = UIImageView(image: resultImage)
-                self.view.addSubview(resultImageView)
-                
-                resultImageView.contentMode = .scaleAspectFit
-                resultImageView.snp.makeConstraints { make in
-                    make.left.right.equalToSuperview()
-                    make.top.equalToSuperview().offset(30)
-                    make.height.equalToSuperview().offset(-100)
-                }
+            guard let leftImage = self.leftImageView.image else {
+                return
             }
+            guard let rightImage = self.rightImageView.image else {
+                return
+            }
+            
+            let resultImage = OpenCVWrapper.stitchTwoImages(
+                leftImage,
+                rightImage: rightImage)
+            
+            self.stitchedResultViewController.resultImage = resultImage
+            
+            self.present(self.stitchedResultViewController, animated: true)
         }
     }
     
