@@ -3,7 +3,6 @@
 opencv framework를 통한 2개의 이미지로 파노라마를 만드는 애플리케이션입니다.
 <br /><br />
 
-----
 
 ## 프로젝트 기능
 1. 파노라마를 만들 2개의 이미지를 사진첩에서 한번에 선택합니다.
@@ -61,7 +60,6 @@ cv::warpPerspective(rightImageMat, resultMat, homoMatrix, cv::Size(rightImageMat
 ```
 <br /><br />
 
-----
 
 ## 시연 영상
 <img width="50%" src="https://user-images.githubusercontent.com/50892654/129445442-d99816c7-9fa1-4f94-9eef-4fdc86e7e03c.gif">
